@@ -50,12 +50,43 @@ class LinkedList:
         new_node.next = pre_node.next
         pre_node.next = new_node    
 
+    def delete(self, data):
+
+        cur_node = self.head
+
+        if cur_node and cur_node.data == data:
+            self.head = cur_node.next
+            cur_node = None
+            return 
+        
+        pre = None
+        while cur_node and cur_node.data != data:
+            pre = cur_node
+            cur_node = cur_node.next
+
+        if cur_node is None:
+            return
+
+        pre.next = cur_node.next
+        cur_node = None 
+
+    def count_length(self):
+        count = 0
+
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+
+        return count
 
 llist = LinkedList()
 llist.append(5)
 llist.append(6)
 llist.pre_append(2)
 llist.insert_after_node(llist.head.next, 4)
+
+llist.delete(5)
 llist.printdata()
 
-
+print('length :' , llist.count_length())
