@@ -80,13 +80,29 @@ class LinkedList:
 
         return count
 
+
+    
+    def reverse_linklist(self):
+        pre = None
+        cur = self.head
+
+        while cur:
+            temp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = temp
+
+        self.head = pre
+       
+        
+
+
 llist = LinkedList()
-llist.append(5)
-llist.append(6)
-llist.pre_append(2)
-llist.insert_after_node(llist.head.next, 4)
+llist.append("A")
+llist.append("B")
+llist.append("C")
+llist.append("D")
 
-llist.delete(5)
+llist.reverse_linklist()
+
 llist.printdata()
-
-print('length :' , llist.count_length())
