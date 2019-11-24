@@ -97,12 +97,3 @@ class LinkedList:
         
 
 
-llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
-
-llist.reverse_linklist()
-
-llist.printdata()

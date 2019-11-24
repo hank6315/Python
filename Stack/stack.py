@@ -18,8 +18,9 @@ class Stack():
         if not self.is_empty():
             return self.item[-1]
 
+    
 
-
+'''
 s = Stack()
 
 s.push(5)
@@ -34,3 +35,4 @@ s.pop()
 print(s.get_stack())
 
 print(s.peek())
+'''
